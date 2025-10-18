@@ -1,0 +1,112 @@
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : SYS_TOP
+Version: K-2015.06
+Date   : Fri Oct 10 16:42:59 2025
+****************************************
+
+
+Library(s) Used:
+
+    scmetro_tsmc_cl013g_rvt_ss_1p08v_125c (File: /home/IC/tsmc_fb_cl013g_sc/aci/sc-m/synopsys/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db)
+
+
+Operating Conditions: scmetro_tsmc_cl013g_rvt_ss_1p08v_125c   Library: scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 1.08 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+SYS_TOP                                1.18e-02 4.72e-02 1.57e+07 7.47e-02 100.0
+  PULSE_GEN_U0 (PULSE_GEN_test_2)         0.000 1.47e-04 3.12e+04 1.79e-04   0.2
+  ASYNC_FIFO_U0 (ASYNC_FIFO_DATA_WIDTH8_test_1)
+                                       2.11e-03 8.09e-03 2.56e+06 1.28e-02  17.1
+    u_FIFO_MEM (FIFO_MEM_CNTRL_DATA_WIDTH8_ADDR_WIDTH3_test_1)
+                                       1.48e-03 5.03e-03 1.73e+06 8.24e-03  11.0
+    w2r_DF_SYNC (DF_SYNC_ADDR_WIDTH3_test_1)
+                                          0.000 5.93e-04 1.07e+05 7.00e-04   0.9
+    r2w_DF_SYNC (DF_SYNC_ADDR_WIDTH3_test_0)
+                                       3.12e-06 6.63e-04 1.08e+05 7.74e-04   1.0
+    u_rd (FIFO_RD_ADDR_WIDTH3_test_1)  3.20e-05 7.66e-04 2.77e+05 1.08e-03   1.4
+    u_wr (FIFO_WR_ADDR_WIDTH3_test_1)  1.25e-06 6.75e-04 2.63e+05 9.39e-04   1.3
+    u_rinc_gen (PULSE_GEN_test_0)      1.59e-07 1.52e-04 3.13e+04 1.84e-04   0.2
+    u_winc_gen (PULSE_GEN_test_1)         0.000 1.48e-04 3.12e+04 1.80e-04   0.2
+  ALU_U0 (ALU_DATA_WIDTH8_test_1)      1.02e-04 1.52e-02 4.27e+06 1.95e-02  26.1
+    mult_34 (ALU_DATA_WIDTH8_DW02_mult_0)
+                                       1.52e-06 3.50e-07 1.65e+06 1.65e-03   2.2
+    add_28 (ALU_DATA_WIDTH8_DW01_add_0)
+                                       1.95e-07 2.74e-06 2.05e+05 2.08e-04   0.3
+    sub_31 (ALU_DATA_WIDTH8_DW01_sub_0)
+                                       2.33e-07 2.75e-06 2.48e+05 2.51e-04   0.3
+    div_37 (ALU_DATA_WIDTH8_DW_div_uns_0)
+                                       2.52e-06 1.55e-05 1.24e+06 1.26e-03   1.7
+  CLK_GATE_U0 (CLK_GATE)               1.84e-03 9.95e-04 1.54e+04 2.85e-03   3.8
+  Register_File_U0 (Register_File_WIDTH8_ADDR4_test_1)
+                                       3.16e-03 1.17e-02 3.63e+06 1.85e-02  24.8
+  SYS_CTRL_U0 (SYS_CTRL_WIDTH8_ADDR4_test_1)
+                                       5.69e-04 3.12e-03 9.66e+05 4.65e-03   6.2
+  DATA_SYNC_U0 (DATA_SYNC_BUS_WIDTH8_test_1)
+                                          0.000 8.85e-04 2.09e+05 1.09e-03   1.5
+  RST_SYNC_2 (RST_SYNC_test_1)         7.18e-07 1.69e-04 2.76e+04 1.97e-04   0.3
+  RST_SYNC_1 (RST_SYNC_test_0)         7.18e-07 1.68e-04 2.76e+04 1.97e-04   0.3
+  UART_RX_CLK_U0 (Clock_Divider_test_0)
+                                       1.36e-05 8.02e-04 8.66e+05 1.68e-03   2.2
+    add_34 (Clock_Divider_1_DW01_inc_0)
+                                          0.000    0.000 9.76e+04 9.76e-05   0.1
+  UART_TX_CLK_U0 (Clock_Divider_test_1)
+                                       3.23e-05 8.33e-04 8.53e+05 1.72e-03   2.3
+    add_34 (Clock_Divider_0_DW01_inc_0)
+                                       1.10e-06 3.57e-06 9.75e+04 1.02e-04   0.1
+  CLKDIV_MUX_U0 (CLKDIV_MUX_DATA_WIDTH8)
+                                       1.27e-06 1.15e-06 4.52e+04 4.77e-05   0.1
+  UART_U0 (UART_IN_width8_DATA_WIDTH8_test_1)
+                                       1.18e-03 4.66e-03 2.06e+06 7.89e-03  10.6
+    UART_RX_U0 (UART_RX_prescale_width6_DATA_WIDTH8_test_1)
+                                       6.43e-04 2.62e-03 1.34e+06 4.60e-03   6.2
+      UART_RX_FSM_unit (UART_RX_FSM_DATA_WIDTH8_bit_cnt_width4_test_1)
+                                       5.32e-05 3.91e-04 1.79e+05 6.23e-04   0.8
+      start_check_unit (start_check_test_1)
+                                          0.000 7.69e-05 1.77e+04 9.46e-05   0.1
+      stop_check_unit (stop_check_test_1)
+                                       1.08e-06 7.78e-05 2.08e+04 9.98e-05   0.1
+      parity_check_unit (parity_check_DATA_WIDTH8_test_1)
+                                       3.06e-06 8.21e-05 1.23e+05 2.08e-04   0.3
+      deserialize_unit (deserializer_DATA_WIDTH8_bit_cnt_width4_test_1)
+                                       1.21e-05 6.60e-04 2.07e+05 8.79e-04   1.2
+      edge_bit_counter_unit (edge_bit_counter_prescale_width6_bit_cnt_width4_test_1)
+                                       1.52e-04 9.03e-04 4.03e+05 1.46e-03   2.0
+      data_sampling_unit (data_sampling_prescale_width6_test_1)
+                                       2.39e-05 4.04e-04 3.82e+05 8.10e-04   1.1
+    UART_TX_U0 (UART_TX_IN_width8_test_1)
+                                       5.04e-04 2.00e-03 7.13e+05 3.22e-03   4.3
+      MUX_unit (MUX_test_1)            5.48e-06 9.55e-05 2.29e+04 1.24e-04   0.2
+      FSM_unit (FSM_test_1)            1.05e-05 3.24e-04 1.18e+05 4.52e-04   0.6
+      parity_calc_unit (parity_calc_IN_width8_test_1)
+                                       1.10e-05 7.17e-04 2.95e+05 1.02e-03   1.4
+      serializer_unit (serializer_IN_width8_test_1)
+                                       1.01e-04 8.43e-04 2.72e+05 1.22e-03   1.6
+  U7 (mux2X1_5)                        9.90e-06 4.30e-05 1.33e+04 6.61e-05   0.1
+  U6 (mux2X1_6)                        9.90e-06 4.30e-05 1.33e+04 6.61e-05   0.1
+  U5 (mux2X1_0)                        5.90e-05 4.63e-05 1.15e+04 1.17e-04   0.2
+  U4 (mux2X1_2)                        1.03e-04 1.99e-05 1.15e+04 1.34e-04   0.2
+  U3 (mux2X1_3)                        6.42e-05 1.94e-05 1.15e+04 9.50e-05   0.1
+  U2 (mux2X1_4)                        5.62e-05 1.93e-05 1.15e+04 8.70e-05   0.1
+  U1 (mux2X1_1)                        6.00e-04 4.28e-05 1.88e+04 6.61e-04   0.9
+1

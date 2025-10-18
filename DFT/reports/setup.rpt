@@ -1,0 +1,84 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : SYS_TOP
+Version: K-2015.06
+Date   : Fri Oct 10 16:42:59 2025
+****************************************
+
+Operating Conditions: scmetro_tsmc_cl013g_rvt_ss_1p08v_125c   Library: scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+Wire Load Model Mode: top
+
+  Startpoint: ALU_U0/ALU_OUT_reg[0]
+              (rising edge-triggered flip-flop clocked by ALU_CLK)
+  Endpoint: ALU_U0/ALU_OUT_reg[1]
+            (rising edge-triggered flip-flop clocked by ALU_CLK)
+  Path Group: ALU_CLK
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock ALU_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  ALU_U0/ALU_OUT_reg[0]/CK (SDFFRQX2M)                    0.00       0.00 r
+  ALU_U0/ALU_OUT_reg[0]/Q (SDFFRQX2M)                     0.42       0.42 f
+  ALU_U0/ALU_OUT_reg[1]/SI (SDFFRQX2M)                    0.00       0.42 f
+  data arrival time                                                  0.42
+
+  clock ALU_CLK (rise edge)                              20.00      20.00
+  clock network delay (ideal)                             0.00      20.00
+  clock uncertainty                                      -0.20      19.80
+  ALU_U0/ALU_OUT_reg[1]/CK (SDFFRQX2M)                    0.00      19.80 r
+  library setup time                                     -0.52      19.28
+  data required time                                                19.28
+  --------------------------------------------------------------------------
+  data required time                                                19.28
+  data arrival time                                                 -0.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                       18.86
+
+
+  Startpoint: SE (input port clocked by scan_clk)
+  Endpoint: UART_U0/UART_TX_U0/serializer_unit/DATA_V_reg[0]
+            (rising edge-triggered flip-flop clocked by scan_clk)
+  Path Group: scan_clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock scan_clk (rise edge)                              0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                  200.00     200.00 r
+  SE (in)                                                 0.56     200.56 r
+  U37/Y (INVXLM)                                          0.20     200.76 f
+  U27/Y (INVXLM)                                          0.11     200.88 r
+  U26/Y (DLY1X1M)                                         1.03     201.90 r
+  UART_U0/test_se (UART_IN_width8_DATA_WIDTH8_test_1)     0.00     201.90 r
+  UART_U0/UART_TX_U0/test_se (UART_TX_IN_width8_test_1)
+                                                          0.00     201.90 r
+  UART_U0/UART_TX_U0/serializer_unit/test_se (serializer_IN_width8_test_1)
+                                                          0.00     201.90 r
+  UART_U0/UART_TX_U0/serializer_unit/U42/Y (INVXLM)       0.10     202.00 f
+  UART_U0/UART_TX_U0/serializer_unit/U43/Y (INVXLM)       0.44     202.44 r
+  UART_U0/UART_TX_U0/serializer_unit/DATA_V_reg[0]/SE (SDFFRQX2M)
+                                                          0.00     202.44 r
+  data arrival time                                                202.44
+
+  clock scan_clk (rise edge)                           1000.00    1000.00
+  clock network delay (ideal)                             0.00    1000.00
+  clock uncertainty                                      -0.20     999.80
+  UART_U0/UART_TX_U0/serializer_unit/DATA_V_reg[0]/CK (SDFFRQX2M)
+                                                          0.00     999.80 r
+  library setup time                                     -0.59     999.21
+  data required time                                               999.21
+  --------------------------------------------------------------------------
+  data required time                                               999.21
+  data arrival time                                               -202.44
+  --------------------------------------------------------------------------
+  slack (MET)                                                      796.76
+
+
+1
