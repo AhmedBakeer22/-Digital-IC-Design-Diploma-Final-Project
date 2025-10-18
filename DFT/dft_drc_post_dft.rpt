@@ -1,0 +1,101 @@
+In mode: Internal_scan...
+  Design has scan chains in this mode
+  Design is scan routed
+  Post-DFT DRC enabled
+
+Information: Starting test design rule checking. (TEST-222)
+  Loading test protocol
+  ...basic checks...
+  ...basic sequential cell checks...
+  ...checking vector rules...
+  ...checking clock rules...
+  ...checking scan chain rules...
+  ...checking scan compression rules...
+  ...checking X-state rules...
+  ...checking tristate rules...
+  ...extracting scan details...
+
+-----------------------------------------------------------------
+Begin Other violations...
+
+Warning: Cell CLK_GATE_U0/U0 has constant 1 value. (TEST-505)
+
+Other violations completed...
+-----------------------------------------------------------------
+
+-----------------------------------------------------------------
+  DRC Report
+
+  Total violations: 1
+
+-----------------------------------------------------------------
+
+1 OTHER VIOLATION
+     1 Cell is constant 1 violation (TEST-505)
+
+
+Warning: Violations occurred during test design rule checking. (TEST-124)
+
+-----------------------------------------------------------------
+  Sequential Cell Report
+
+  1 out of 382 sequential cells have violations
+
+-----------------------------------------------------------------
+
+SEQUENTIAL CELLS WITH VIOLATIONS
+      *   1 cell has constant 1 value
+SEQUENTIAL CELLS WITHOUT VIOLATIONS
+      * 381 cells are valid scan cells
+
+Information: Test design rule checking completed. (TEST-123)
+  Running test coverage estimation...
+ 16534 faults were added to fault list.
+ ATPG performed for stuck fault model using internal pattern source.
+ ----------------------------------------------------------
+ #patterns     #faults     #ATPG faults  test      process
+ stored     detect/active  red/au/abort  coverage  CPU time
+ ---------  -------------  ------------  --------  --------
+ Begin deterministic ATPG: #uncollapsed_faults=13067, abort_limit=10...
+ 0            7561   5505         1/0/0    66.09%      0.01
+ 0            1443   4057         3/1/0    74.91%      0.01
+ 0            1140   2915         5/1/1    81.87%      0.01
+ 0             606   2294        10/2/1    85.63%      0.01
+ 0             448   1840        16/2/1    88.40%      0.01
+ 0             283   1547        23/2/2    90.19%      0.02
+ 0             198   1331        33/2/2    91.50%      0.02
+ 0             246   1077        40/2/2    93.05%      0.02
+ 0             182    882        48/2/2    94.24%      0.02
+ 0             125    730        64/2/2    95.16%      0.02
+ 0              91    602        74/3/2    95.93%      0.02
+ 0              94    486        89/3/2    96.64%      0.02
+ 0              81    381       103/3/2    97.28%      0.03
+ 0              79    224       152/4/4    98.23%      0.03
+ 0              56    138       170/5/5    98.76%      0.03
+ 0              52     74       179/5/6    99.15%      0.04
+ 0              42     21       188/5/6    99.48%      0.04
+ 0               7      9       192/5/6    99.56%      0.04
+ 
+            Pattern Summary Report
+ -----------------------------------------------
+ #internal patterns                           0
+ -----------------------------------------------
+ 
+
+     Uncollapsed Stuck Fault Summary Report
+ -----------------------------------------------
+ fault class                     code   #faults
+ ------------------------------  ----  ---------
+ Detected                         DT      16006
+ Possibly detected                PT          1
+ Undetectable                     UD        456
+ ATPG untestable                  AU         63
+ Not detected                     ND          8
+ -----------------------------------------------
+ total faults                             16534
+ test coverage                            99.56%
+ -----------------------------------------------
+  Information: The test coverage above may be inferior
+               than the real test coverage with customized
+               protocol and test simulation library.
+1
